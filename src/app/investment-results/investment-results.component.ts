@@ -5,19 +5,17 @@ import { Component, input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './investment-results.component.html',
-  styleUrl: './investment-results.component.css'
+  styleUrl: './investment-results.component.css',
 })
 export class InvestmentResultsComponent {
-
-  // initialInvestment = input.required<number>();
-  // annualInvestment = input.required<number>();
-
-  // expectedReturn = input.required<number>();
-
-  // duration = input.required<number>()
-
-
-  
+  results = input<{
+    year: number,
+    interest: number,
+    valueEndOfYear: number,
+    annualInvestment: number,
+    totalInterest: number,
+    totalAmountInvested: number,
+  }[]>();
 
 
 }

@@ -11,6 +11,15 @@ import { InvestmentInput } from './investment-input.model';
   imports: [HeaderComponent, UserInputComponent, InvestmentResultsComponent],
 })
 export class AppComponent {
+
+  resultsData?: {
+    year: number,
+    interest: number,
+    valueEndOfYear: number,
+    annualInvestment: number,
+    totalInterest: number,
+    totalAmountInvested: number,
+  }[];
   calculateInvestmentResults(data: InvestmentInput) {
     const { initialInvestment, annualInvestment, expectedReturn, duration } =
       data;
@@ -34,6 +43,6 @@ export class AppComponent {
       });
     }
 
-    console.log(annualData);
+    this.resultsData = annualData;
   }
 }
