@@ -1,6 +1,7 @@
 import { Component, output, signal } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
+import { InvestmentInput } from '../investment-input.model';
 
 @Component({
   selector: 'app-user-input',
@@ -11,12 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class UserInputComponent {
 
-  calculate = output<{
-    initialInvestment: number;
-    annualInvestment: number;
-    expectedReturn: number;
-    duration: number;
-  }>();
+  calculate = output<InvestmentInput>();
 
   enteredInitialInvestment = signal('0');
   enteredAnnualInvestment = signal('100');
